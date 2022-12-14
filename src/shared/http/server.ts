@@ -1,7 +1,8 @@
-import express from 'express';
+import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import routes from './routes';
 import 'reflect-metadata';
+import AppError from './errors/AppError';
 
 const app = express();
 app.use(cors());
