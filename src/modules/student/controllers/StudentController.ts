@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import CreateStudentService from "./services/CreateStudentService";
-import DeleteStudentService from "./services/DeleteStudentService";
-import ListStudentService from "./services/ListStudentService";
-import ShowStudentService from "./services/ShowStudentService";
-import UpdateStudentService from "./services/UpdateStudentService";
+import CreateStudentService from "../services/CreateStudentService";
+import DeleteStudentService from "../services/DeleteStudentService";
+import ListStudentService from "../services/ListStudentService";
+import ShowStudentService from "../services/ShowStudentService";
+import UpdateStudentService from "../services/UpdateStudentService";
 
 export default class StudentController{
     public async index(request: Request, response: Response) :
