@@ -9,7 +9,7 @@ export default class User{
   email: string;
   @Column()
   password: string;
-  @Column()
+  @Column({ nullable: true })
   avatar: string;
   @CreateDateColumn()
   created_at: Date;

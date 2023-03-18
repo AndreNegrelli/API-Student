@@ -10,10 +10,9 @@ const routes = Router()
 
 routes.use('/users', usersRouter)
 routes.use('/students', studentRouter)
-routes.use('/users', sessionsRouter)
 routes.use('/password', passwordRouter)
 routes.use('/profile', profileRouter)
-routes.use('/teacher', teacherRouter)
+routes.use('/teachers', teacherRouter)
 
 
 export default routes;

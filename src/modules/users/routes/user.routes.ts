@@ -21,5 +21,6 @@ userRouter.post('/', celebrate({
         password: Joi.string().required()
     }
 }), usersController.create)
-userRouter.patch('/avatar', isAuthenticated, upload.single('avatar'), usersAvatarController.update)
+userRouter.patch('/avatar', isAuthenticated, 
+upload.single('avatar'), usersAvatarController.update)
  export default userRouter
