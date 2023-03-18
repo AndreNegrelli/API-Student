@@ -15,7 +15,7 @@ export default class CreateStudentService{
     Promise<Student>{
         const studentRepository = 
         getCustomRepository(StudentRepository);
-
+        
         const student = studentRepository.create({
             name, adress, birthdate
         });

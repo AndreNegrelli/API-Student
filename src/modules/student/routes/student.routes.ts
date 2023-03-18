@@ -13,7 +13,7 @@ studentRouter.get('/:id', celebrate({
 studentRouter.post('/', celebrate({
     [Segments.BODY]: {
      name: Joi.string().required(),
-     adress: Joi.number().precision(2).required(),
+     adress: Joi.string().required(),
      birthdate: Joi.number().required()
     } 
  }), studentController.create);
@@ -21,7 +21,7 @@ studentRouter.post('/', celebrate({
      [Segments.PARAMS] : {id: Joi.string().uuid().required()},
      [Segments.BODY]: {
          name: Joi.string().required(),
-         adress: Joi.number().precision(2).required(),
+         adress: Joi.string().required(),
          birthdate: Joi.number().required()
         } 
  }), studentController.update);
