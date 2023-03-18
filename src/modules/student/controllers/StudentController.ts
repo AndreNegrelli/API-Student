@@ -24,6 +24,7 @@ export default class StudentController{
         const { name, adress, birthdate } = request.body;
         const createStudent = new CreateStudentService();
         const student = await createStudent.execute({ name, adress, birthdate });
+        console.log(student);
         return response.json(student);
     }
     public async update(request: Request, response: Response) :

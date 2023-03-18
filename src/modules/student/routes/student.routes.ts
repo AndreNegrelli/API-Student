@@ -14,7 +14,7 @@ studentRouter.post('/', celebrate({
     [Segments.BODY]: {
      name: Joi.string().required(),
      adress: Joi.string().required(),
-     birthdate: Joi.number().required()
+     birthdate: Joi.string().required()
     } 
  }), studentController.create);
  studentRouter.put('/:id', celebrate({
@@ -22,7 +22,7 @@ studentRouter.post('/', celebrate({
      [Segments.BODY]: {
          name: Joi.string().required(),
          adress: Joi.string().required(),
-         birthdate: Joi.number().required()
+         birthdate: Joi.string().required()
         } 
  }), studentController.update);
  studentRouter.delete('/:id', celebrate({

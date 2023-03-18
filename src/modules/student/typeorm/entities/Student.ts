@@ -8,8 +8,8 @@ export default class Student{
     name: string
     @Column('varchar')
     adress: string
-    @Column('date')
-    birthdate: number
+    @Column('varchar')
+    birthdate: string
     @CreateDateColumn()
     created_at: Date
     @CreateDateColumn()

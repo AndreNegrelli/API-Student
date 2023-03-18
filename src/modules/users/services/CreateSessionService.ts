@@ -27,7 +27,6 @@ export default class CreateSessionsService{
         if(!passwordConfirmed){
             throw new AppError('Incorrect email/password combination', 401)
         }
-        console.log('teste')
         const token = sign({}, authConfig.jwt.secret,{
             subject: user.id,
             expiresIn: authConfig.jwt.expiresIn

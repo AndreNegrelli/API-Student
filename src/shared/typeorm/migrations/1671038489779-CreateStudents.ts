@@ -10,7 +10,7 @@ export class CreateStudents1671038489779 implements MigrationInterface {
                     {name: 'id', type: 'uuid', isPrimary: true, generationStrategy: 'uuid', default: 'uuid_generate_v4()'},
                     {name: 'name', type: 'varchar'},
                     {name: 'adress', type: 'varchar'},
-                    {name: 'birthdate', type: 'date'},
+                    {name: 'birthdate', type: 'varchar'},
                     {name: 'created_at', type: 'timestamp', default: 'now()'},
                     {name: 'updated_at', type: 'timestamp', default: 'now()'}
                 ]
