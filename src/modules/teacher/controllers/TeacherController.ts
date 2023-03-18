@@ -5,8 +5,6 @@ import UpdateTeacherService from "../services/UpdateTeacherService";
 import DeleteTeacherService from "../services/DeleteTeacherService";
 import ShowTeacherService from "../services/ShowTeacherService";
 
-
-
 export default class TeacherController{
   constructor(){}
 
@@ -24,6 +22,7 @@ export default class TeacherController{
   }
 
   public async create(request: Request, response: Response): Promise<Response>{
+    console.log("entrou aqui");
     const {name, email} = request.body;
     const createTeacher = new CreateTeacherService();
     const teacher = await createTeacher.execute({name, email});

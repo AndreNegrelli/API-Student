@@ -23,12 +23,11 @@ export default class CreateStudentService{
         studentRepository.findByAdress(adress);
 
         if(studentNameExists && studentAdressExists){
-            throw new AppError('There is already one student ' + name +
-            ' with this given information.');
+            throw new AppError('There is already one student with this given information.');
         }
-
         const student = studentRepository.create({
-            name, adress, birthdate
+            name,
+            adress,
         });
         
         await studentRepository.save(student);

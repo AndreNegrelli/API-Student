@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm"
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm"
 
 @Entity('teachers')
 export default class Teacher{
@@ -8,7 +8,7 @@ export default class Teacher{
   name: string
   @Column()
   email: string
-  @Column()
+  @CreateDateColumn()
   created_at: Date
   @UpdateDateColumn()
   updated_at: Date

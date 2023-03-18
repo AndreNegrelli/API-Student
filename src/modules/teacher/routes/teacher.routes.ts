@@ -1,12 +1,9 @@
 import { Router } from 'express';
 import {celebrate, Joi, Segments} from 'celebrate';
 import TeacherController from '../controllers/TeacherController';
-import isAuthenticadted from '@shared/http/middlewares/isAuthenticated';
 
 const teacherRouter = Router();
 const teacherController = new TeacherController();
-
-teacherRouter.use(isAuthenticadted);//todas autenticadas
 
 teacherRouter.get('/', teacherController.index);
 
