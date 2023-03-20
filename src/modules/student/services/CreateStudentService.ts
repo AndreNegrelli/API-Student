@@ -28,8 +28,8 @@ export default class CreateStudentService{
         const student = studentRepository.create({
             name,
             adress,
+            birthdate
         });
-        
         await studentRepository.save(student);
         return student;
     }

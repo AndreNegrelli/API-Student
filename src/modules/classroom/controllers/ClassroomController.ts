@@ -12,11 +12,10 @@ export default class ClassroomController {
         return response.json(classroom);
     }
 
-    public async create(request: Request, response: Response):
-        Promise<Response> {
-        const { teacher_id, students, name, number_of_students } = request.body;
+    public async create(request: Request, response: Response): Promise<Response> {
+        const { teacher_id, student_id, name, number_of_students } = request.body;
         const createclassroom = new CreateClassroomService();
-        const classroom = await createclassroom.execute({ teacher_id, students, name, number_of_students });
+        const classroom = await createclassroom.execute({ teacher_id, student_id, name, number_of_students });
         return response.json(classroom);
     }
 }

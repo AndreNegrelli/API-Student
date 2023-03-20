@@ -30,12 +30,22 @@ export default class StudentRepository extends Repository<Student>{
         return student;
     }
 
-    public async findAllByIds(students: IFindStudents[]):
-        Promise<Student[]> {
-        const studentsIds = students.map(student => student.id);
-        const existsStudents = await this.find({
-            where: { id: In(studentsIds) }
+    public async findById(id: string)
+        : Promise<Student | undefined> {
+        const student = await this.findOne({
+            where: { id }
         })
-        return existsStudents;
+        return student;
+    }
+
+    public async findAllByIds(students: IFindStudents[]):
+        Promise<Student> {
+        if (Array.isArray(students)) {
+            const existsStudents = await this.find({
+                where: { id: In(students) }
+            })
+            return existsStudents;
+        }
+        return this.findById(students);
     }
 }

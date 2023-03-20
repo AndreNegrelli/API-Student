@@ -21,6 +21,7 @@ export default class StudentController{
     }
     public async create(request: Request, response: Response) :
     Promise<Response>{
+        console.log("caiu aqui");
         const { name, adress, birthdate } = request.body;
         const createStudent = new CreateStudentService();
         const student = await createStudent.execute({ name, adress, birthdate });
