@@ -20,7 +20,6 @@ export default class CreateTeacherService{
       name,
       email
     });
-    console.log(teachersRepository.save(teacher));
     await teachersRepository.save(teacher);
     return teacher;
   }

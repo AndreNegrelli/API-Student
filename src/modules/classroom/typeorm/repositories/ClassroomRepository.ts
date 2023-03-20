@@ -20,8 +20,7 @@ interface IRequest{
 export default class ClassroomRepositoty extends Repository<Classroom>{
     public async findById(id: string): Promise<Classroom | undefined>{
         const classroom = this.findOne(id, {
-            relations: ['students', 'teachers'],
-            where: { id }
+            where: { id },
         });
         return classroom;
     }

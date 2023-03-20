@@ -26,7 +26,6 @@ export default class CreateClassroomService{
         const teacherRepository = getCustomRepository(TeachersRepository);
         const classroomRepository = getCustomRepository(ClassroomRepositoty);
         
-        console.log("student id after: ", student_id);
         const teacherExists = await teacherRepository.findById(teacher_id);
         if(!teacherExists){
             throw new AppError('Could not find any teacher with the given id.');

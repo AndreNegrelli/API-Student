@@ -6,7 +6,9 @@ import ShowClassroomService from "../services/ShowClassroomService";
 export default class ClassroomController {
     public async show(request: Request, response: Response):
         Promise<Response> {
+        console.log("caiu aqui");
         const { id } = request.params;
+        console.log(id);
         const showClassroom = new ShowClassroomService();
         const classroom = await showClassroom.execute({ id });
         return response.json(classroom);

@@ -22,7 +22,6 @@ export default class TeacherController{
   }
 
   public async create(request: Request, response: Response): Promise<Response>{
-    console.log("entrou aqui");
     const {name, email} = request.body;
     const createTeacher = new CreateTeacherService();
     const teacher = await createTeacher.execute({name, email});
