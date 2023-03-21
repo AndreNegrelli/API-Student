@@ -1,6 +1,6 @@
 import {MigrationInterface, QueryRunner, TableColumn, TableForeignKey} from "typeorm";
 
-export class AddStudentIdToClassrooms1679263033561 implements MigrationInterface {
+export class AddStudentIdToClassrooms1679419093753 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.addColumn('classrooms', new TableColumn({

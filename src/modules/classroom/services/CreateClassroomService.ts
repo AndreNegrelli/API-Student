@@ -26,6 +26,10 @@ export default class CreateClassroomService{
         const teacherRepository = getCustomRepository(TeachersRepository);
         const classroomRepository = getCustomRepository(ClassroomRepositoty);
         
+        const classroomExists = await classroomRepository.findByName(name);
+        if(classroomExists){
+            throw new AppError('Already have one classroom with this given name')
+        }
         const teacherExists = await teacherRepository.findById(teacher_id);
         if(!teacherExists){
             throw new AppError('Could not find any teacher with the given id.');
@@ -34,14 +38,16 @@ export default class CreateClassroomService{
         if(!existsStudents){
             throw new AppError('Could not find any students with the given ids.');
         }
-
+        if(existsStudents.length > number_of_students){
+            throw new AppError('the maximium number of students on classroom is ' + number_of_students);
+        }
         const classroom = await classroomRepository.createClassroom({
             teacher: teacherExists,
             students: existsStudents,
             name: name,
             number_of_students: number_of_students
         });
-        
+    
         await classroomRepository.save(classroom);
         return classroom;
     }

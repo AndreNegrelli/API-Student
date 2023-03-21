@@ -29,13 +29,10 @@ export default class ClassroomRepositoty extends Repository<Classroom>{
     }
 
     public async findByName(name: string): Promise<Classroom | undefined> {
-        const classroom = await this.createQueryBuilder('classroom')
-        .leftJoinAndSelect('classroom.teacher', 'teacher')
-        .where('teacher.id = classroom.teacher_id')
-        .where('classroom.id = :id', { name })
-        .getOne()
-        
-        return classroom;
+        const classroom = await this.findOne({
+            where: { name }
+        })
+        return classroom
     }
 
     public async createClassroom({ teacher, students, name, number_of_students }: IRequest):
